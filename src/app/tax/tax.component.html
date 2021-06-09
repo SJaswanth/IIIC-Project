@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Ubuntu" rel="stylesheet">
+    <!--css stylesheet-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  
+    <!--fontawesome-->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+    <!--bootstrap scripts-->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <section id="navigation">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="#">Paytax</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="http://localhost:4200/home-dashboard">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="http://localhost:4200/dashboard">User Profile</a>
+          </li>
+         
+          <li class="nav-item active">
+            <a class="nav-link" href="http://localhost:4200/recom-form">Create Form</a>
+          </li>
+          <li class="nav-item article active">
+            <a class="nav-link" href="http://localhost:4200/dropdown">Tax Reports</a>
+          </li>
+  
+          <li class="nav-item active">
+            <a class="nav-link" href="http://localhost:4200/tax">Tax Calculator</a>
+          </li>
+        </ul>
+        <span class="navbar-text">
+          <button mat-raised-button color="primary" (click)="logout()" routerLink="/home-page">
+            <mat-icon>logout</mat-icon>
+            <span>Log out</span>
+        </button>
+        </span>
+      </div>
+    </nav>
+  
+      </section>
+    <main class="my-form">
+      <div class="cotainer">
+          <div class="row justify-content-center">
+              <div class="col-md-8">
+                      <div class="card">
+                          <div class="card-header crd">Tax Calculator</div>
+                          <div class="card-body">
+                              <form name="my-form">
+
+                                  <div class="form-group row">
+
+                                      <label for="full_name"  class="col-md-4 col-form-label text-md-right">Total Income</label>
+                                      <div class="col-md-6">
+                                          <input type="number" id="name"  autocomplete="off" class="form-control" [(ngModel)]="income" name="name" #name="ngModel" required>
+                                       <!-- <div *ngIf="warn">
+                                        <div *ngIf="name.invalid && (name.dirty || name.touched)"
+                                          class="alert alert-danger">
+
+                                           <div *ngIf="name.errors.required">
+                                              Name is required.
+                                              </div>
+                                              <div *ngIf="name.errors.minlength">
+                                              Name must be at least 4 characters long.
+                                              </div>
+                                              <div *ngIf="name.errors.forbiddenName">
+                                              Name cannot be Bob.
+                                              </div>
+
+                                              </div>
+                                              </div> -->
+                                      </div>
+                                  </div>
+
+                                  <div class="form-group row">
+                                      <label for="Aadhar" class="col-md-4 col-form-label text-md-right">Deductions</label>
+                                      <div class="col-md-6">
+                                          <input type="number" id="aadhar" autocomplete="off" class="form-control" required [(ngModel)]="deduction" name="aadhar" #aadhar="ngModel" >
+                                          <!-- <div *ngIf="warn">
+                                          <div *ngIf="aadhar.invalid && (aadhar.dirty || aadhar.touched)"
+                                          class="alert alert-danger">
+
+                                           <div *ngIf="aadhar.errors.required">
+                                              Aadhar ID is required.
+                                              </div>
+                                              <div *ngIf="aadhar.errors.minlength">
+                                              Aadhar ID must be at least 12 digits long.
+                                              </div>
+
+                                              <div *ngIf="aadhar.errors.type">
+                                                Adhaar ID cannot be text.
+                                                </div>
+                                            </div>
+                                              </div> -->
+                                        </div>
+                                  </div>
+                                  <button class="btn btn-primary center" [disabled]="!income||!deduction" (click)="calculate()">Calculate</button><br><br>
+
+                                  <label>Total taxable Income:</label> {{TotaltaxableIncome}}<br><br>
+                                  <label>Basic Exemption:</label>{{Basicexemption}}<br><br>
+                                  <label>Taxable Amount:</label>{{TaxableAmount}}<br><br>
+                                  <label>Rebate(section 87-A):</label>{{rebate}}<br><br>
+                                  <label class="btn-success">Payable tax:</label>{{PayableTax}}<br><br>
+
+                              </form>
+                          </div>
+                      </div>
+              </div>
+          </div>
+      </div>
+
+  </main>
+    <!-- <h1>Income Tax Calculator</h1>
+
+    <label>Enter Income:</label>
+    <input type="text" [(ngModel)]="income" />
+    <label>Enter Deduction:</label>
+    <input type="text" [(ngModel)]="deduction" /><br><br>
+    <button class="btn btn-primary center" (click)="calculate()">Add</button><br><br>
+    <label>Total taxable Income:</label> {{TotaltaxableIncome}}<br><br>
+    <label>Basic Exemption:</label>{{Basicexemption}}<br><br>
+    <label>Taxable Amount:</label>{{TaxableAmount}}<br><br>
+    <label>Payable tax:</label>{{PayableTax}}<br><br> -->
+</body>
+</html>

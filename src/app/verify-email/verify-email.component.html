@@ -1,0 +1,79 @@
+<html>
+<head>
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  </head>
+  <body>
+
+<div class="card login-form">
+	<div class="card-body">
+		<h3 class="card-title text-center">Thank You for Registering</h3>
+
+		<div class="card-text">
+			<form>
+				<mat-card *ngIf="!(afAuth.user | async)">
+          <mat-icon>do_not_disturb</mat-icon>
+          <span>User is not logged in -- the user needs to be logged in to resend the verification email</span>
+      </mat-card>
+      <div class="form-group">
+      <label for="exampleInputEmail1"> A verification email will be sent to <span>{{ email }}</span>.</label>
+      <label for="exampleInputEmail1">After successfully verification please login</label>
+    </div>
+				<button type="submit" class="btn btn-primary btn-block" (click)="resendVerificationEmail()">resend verification</button>
+        <div class="redirectToLogin">
+          <span>Go back to ?<a class="redirect" href="http://localhost:4200/login"> Sign in</a></span>
+        </div>
+
+			</form>
+		</div>
+	</div>
+</div>
+</body>
+</html>
+
+
+<!-- Verify Email
+<br>
+<br>
+<button mat-raised-button color="primary" routerLink="/home">
+    <mat-icon>home</mat-icon>
+    <span>Home</span>
+</button>
+
+<mat-card *ngIf="!(afAuth.user | async)">
+    <mat-icon>do_not_disturb</mat-icon>
+    <span>User is not logged in -- the user needs to be logged in to resend the verification email</span>
+</mat-card>
+
+<mat-card>
+
+    <p>A verification email will be sent to <span>{{ email }}</span>.</p>
+    <p>After successfully verification please login</p>
+
+    <div *ngIf="firebaseErrorMessage != ''" class="error-style">
+        <span>{{ firebaseErrorMessage }}</span>
+    </div>
+
+    <button mat-raised-button color="primary" [disabled]="mailSent" (click)="resendVerificationEmail()">Resend verification email</button>
+    <button mat-raised-button color="primary" routerLink="/login">Login</button>
+
+    <div *ngIf="mailSent">
+        <p>An email has been sent!</p>
+        <button mat-raised-button color="primary" routerLink="/home">
+            <mat-icon>home</mat-icon>
+            <span>Return Home</span>
+        </button>
+    </div>
+</mat-card>
+
+<div class="progressIndicator" [style.display]="isProgressVisible ? 'inline' : 'none' ">
+    <mat-progress-spinner class=" example-margin" color="primary" mode="indeterminate"></mat-progress-spinner>
+</div> -->

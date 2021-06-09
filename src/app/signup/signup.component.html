@@ -1,0 +1,242 @@
+
+    
+      <html>
+        <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1">
+          <meta http-equiv="X-UA-Compatible" content="IE=edge">
+          <!-- Document title -->
+          <title>Multipurpose</title>
+          <!-- Stylesheets & Fonts -->
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      
+          <!-- Google Fonts -->
+          <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i%7CRajdhani:400,600,700"
+              rel="stylesheet">
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+      <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1">
+          <meta http-equiv="X-UA-Compatible" content="IE=edge">
+          <!-- Document title -->
+          <title>Multipurpose</title>
+          <!-- Stylesheets & Fonts -->
+          <!-- Google Fonts -->
+          <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i%7CRajdhani:400,600,700"
+              rel="stylesheet">
+          <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+          <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+          <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        </head>
+        <body>
+            <!-- Loader Start -->
+            <div class="css-loader">
+              <div class="loader-inner line-scale d-flex align-items-cen ter justify-content-center"></div>
+          </div>
+          <header class="position-absolute w-100">
+              <div class="container">
+                  <div class="top-header d-none d-sm-flex justify-content-between align-items-center">
+                      <div class="contact">
+                          <a href="tel:+1234567890" class="tel"><i class="fa fa-phone" aria-hidden="true"></i>+9898989898</a>
+                          <a href="mailto:info@yourmail.com"><i class="fa fa-envelope"
+                                  aria-hidden="true"></i>students@gmail.com</a>
+                      </div>
+                      <nav class="d-flex aic">
+                          <a href="http://localhost:4200/login" class="login"><i class="fa fa-user" aria-hidden="true"></i>Login</a>
+                          <ul class="nav social d-none d-md-flex">
+                              <li><a href="https://www.facebook.com/fh5co" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                              <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                              <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                          </ul>
+                      </nav>
+                  </div>
+                  <nav class="navbar navbar-expand-md navbar-light">
+                      <a href="http://localhost:4200/home"  class="navbar-brand">Paytax</a>
+                      <div class="group d-flex align-items-center">
+                          <button class="navbar-toggler" type="button" data-toggle="collapse"
+                              data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                              aria-expanded="false" aria-label="Toggle navigation"><span
+                                  class="navbar-toggler-icon"></span></button>
+                          <a class="login-icon d-sm-none" href="#"><i class="fa fa-user"></i></a>
+                          <a class="cart" href="#"><i class=""></i></a>
+                      </div>
+                      <a class="search-icon d-none d-md-block" href="#"><i class=""></i></a>
+                      <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                          <ul class="d-flex aic">
+                            <li class="login"><a class="nav-link"  href="http://localhost:4200/home">Home</a></li>
+                            <li class="login"><a class="nav-link" href="http://localhost:4200/signup">Register</a></li>
+                            <li class="login"><a class="nav-link" href="http://localhost:4200/services">Services</a></li>
+                            <li class="login"><a class="nav-link" href="http://localhost:4200/about-us">About Us</a></li>
+                            <li class="login"><a class="nav-link" href="http://localhost:4200/help">help</a></li>
+                                                </ul>
+      
+                      </div>
+                  </nav>
+              </div>
+          </header>
+      <div class="wrapper fadeInDown">
+        <div id="formContent">
+          <!-- Tabs Titles -->
+      
+          <!-- Icon -->
+          <div class="fadeIn first signup">
+               Register
+       
+            </div>
+          <!-- Login Form -->
+          <div class="frm">
+            <form [formGroup]="signupForm" (ngSubmit)="signup()" (ngSubmit)="signupForm.valid">
+                <div class="form-group row">
+                    <label for="full_name" class="col-md-4 col-form-label text-md-right">Full Name*</label>
+                    <div class="col-md-6">
+                        <input type="text" autocomplete="off" class="form-control" formControlName="displayName"  matInput >
+                        <div style="color: red;"
+                        *ngIf="!displayName?.valid && (displayName?.dirty ||displayName?.touched)">
+                        <div [hidden]="!displayName.errors.required">
+                          Full Name is required
+                        </div>
+                        <div [hidden]="!displayName.errors.minlength">
+                          Min Length is 4 required
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                  <label for="full_name" class="col-md-4 col-form-label text-md-right">Email*</label>
+                  <div class="col-md-6">
+                      <input type="email" class="form-control" formControlName="email" matInput>
+                      <span style="color: red;" class="error" *ngIf="email.invalid && email.touched">Email is required</span>
+            
+                    </div>
+              </div>
+              <div class="form-group row">
+                <label for="full_name" class="col-md-4 col-form-label text-md-right">Password*</label>
+                <div class="col-md-6">
+                    <input type="password" class="form-control" formControlName="password" matInput>
+                    <span style="color: red;" class="error" *ngIf="password.invalid && password.touched">Password is required</span>
+          
+                  </div>
+            </div>
+              <div class="form-group row">
+                <label for="full_name" class="col-md-4 col-form-label text-md-right">Age*</label>
+                <div class="col-md-6">
+                    <input type="text" autocomplete="off" class="form-control" formControlName="age" matInput>
+                    <span style="color: red;" class="error" *ngIf="age.invalid && age.touched">Age is required</span>
+            
+                  </div>
+                
+            </div>
+            <div class="form-group row">
+              <label for="full_name" class="col-md-4 col-form-label text-md-right">Date of Birth*</label>
+              <div class="col-md-6">
+                  <input type="date" autocomplete="off" class="form-control" formControlName="dob" matInput>
+                  <span style="color: red;" class="error" *ngIf="dob.invalid && dob.touched">Date of birth is required</span>
+            
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="full_name" class="col-md-4 col-form-label text-md-right">Aadhar Id*</label>
+                <div class="col-md-6">
+                    <input type="text" autocomplete="off" class="form-control" formControlName="aadhar" matInput>
+                    <!-- <span style="color: red;" class="error" *ngIf="aadhar.invalid && aadhar.touched">Aadhar ID is required</span> -->
+                    <!-- <span style="color: red;" class="error" *ngIf="aadhar.errors.minlength">Aadhar ID should be atleast 12 digits </span> -->
+                    <div style="color: red;"
+                    
+                    *ngIf="!aadhar?.valid && (aadhar?.dirty ||aadhar?.touched)">
+                    <div [hidden]="!aadhar.errors.required">
+                      Aadhar Id is required
+                    </div>
+                    <div [hidden]="!aadhar.errors.minlength">
+                       Min Length of 12 is required
+                    </div>
+                  </div>
+                  </div>
+              </div>
+              <div class="form-group row">
+                <label for="full_name" class="col-md-4 col-form-label text-md-right">Gender*</label>
+                <div class="col-md-6">
+                    <select id="gender" class="form-control"  autocomplete="off" formControlName="gender">
+                        <option *ngFor="let c of countries" [ngValue]="c">{{ c }}</option>
+                    </select>
+                    <span style="color: red;" class="error" *ngIf="gender.invalid && gender.touched">Gender is required</span>
+                    
+
+                  </div>
+              </div>
+              
+
+                <!-- <mat-card class="form-card"> -->
+                <!-- <p>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Full Name</mat-label>
+                        <input autocomplete="off" formControlName="displayName" type="text" matInput placeholder="Display Name">
+                    </mat-form-field>
+                </p>
+                <p>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Email</mat-label>
+                        <input formControlName="email" type="email" matInput placeholder="Email">
+                    </mat-form-field>
+                </p>
+                <p>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Password</mat-label>
+                        <input autocomplete="off" formControlName="password" type="password" matInput placeholder="Password">
+                    </mat-form-field>
+                </p>
+                <p>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Age</mat-label>
+                        <input autocomplete="off" formControlName="age" type="number" matInput placeholder="Age">
+                    </mat-form-field>
+                </p>
+                <p>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Gender</mat-label>
+                        <select multiple formControlName="gender">
+                            <option value="">Choose your gender</option>
+                            <option *ngFor="let city of gender" [ngValue]="city" (change)="changeCity($event)">{{city}}
+                            </option>
+                         </select>
+                </mat-form-field>
+                </p>
+                <p>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Data of Birth</mat-label>
+                        <input autocomplete="off" formControlName="dob" type="date" matInput placeholder="Display Name">
+                    </mat-form-field>
+                </p>
+               
+
+                <p>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Aadhar Id</mat-label>
+                        <input autocomplete="off" formControlName="aadhar" type="number" matInput placeholder="Aadhar Id">
+                    </mat-form-field>
+                </p> -->
+            
+                <div *ngIf="firebaseErrorMessage != ''" class="error-style">
+                    <span>{{ firebaseErrorMessage }}</span>
+                </div>
+        
+                <button class="btn btn-primary center fadeIn fourth"  [disabled]="!signupForm.valid">Signup</button><br><br>
+
+            </form>
+        
+      </div>
+          
+          <!-- Remind Passowrd -->
+          <div id="formFooter">
+            <span class="rty">Already a member? <a class="underlineHover qwe" href="http://localhost:4200/login"> Login</a> </span><br>
+      
+          </div>
+       
+        </div>
+      </div>
+   
+      </body>
+      </html>
+      
+    
+   

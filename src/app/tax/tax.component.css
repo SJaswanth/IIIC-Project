@@ -1,0 +1,77 @@
+
+.navbar-brand{
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+  body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: white;
+  }
+  h1 {
+  color: blue;
+  }
+
+  label {
+  float: left;
+  width: 10em;
+  text-align: right;
+  }
+  input {
+  margin-left: 1em;
+  margin-bottom: .5em;
+  }
+.center{
+  margin-left: 400px;
+}
+.my-form
+{
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+
+.my-form .row
+{
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.login-form
+{
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+
+.login-form .row
+{
+    margin-left: 0;
+    margin-right: 0;
+}
+.crd{
+text-align: center;
+}
+
+.login
+{
+  list-style: none;
+}
+body{
+  margin: 0;
+  font-size: .9rem;
+  font-weight:400;
+  line-height: 1.8;
+  color: #212529;
+  text-align: left;
+  background-color: #fffbfb;
+  padding-bottom: 80px;
+}
+
+.nbr{
+  font-size: 2.5rem;
+  font-weight: bold;
+  font-family: "Poppins", sans-serif;
+}
+.navbar-laravel
+{
+  box-shadow: 0 2px 4px rgba(0,0,0,.04);
+}
